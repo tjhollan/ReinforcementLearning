@@ -37,6 +37,7 @@ class NeuralNetwork():
             optimizer = method
         self.model.compile(optimizer=optimizer, loss='mean_absolute_error', metrics=[self.R_squared])
         verbose_number = 0 if not verbose else 1
+        
         self.model.fit(x=X, y=T, epochs=n_epochs, batch_size=None, shuffle=True, verbose=verbose_number, validation_split=0.0)
         return self
         
